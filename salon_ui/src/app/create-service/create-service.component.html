@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Service</h2>
+<mat-dialog-content class="mat-typography">
+    <div>
+        <form [formGroup]="servicesForm">
+
+            <mat-form-field appearance="fill" [formControl]="nameControl" ngDefaultControl>
+                <mat-label>name</mat-label>
+                <input matInput placeholder="name" required name="name">
+            </mat-form-field>
+            <mat-form-field appearance="fill" [formControl]="descriptionControl" ngDefaultControl>
+                <mat-label>description</mat-label>
+                <input matInput placeholder="enter description" required name="description">
+            </mat-form-field>
+            <mat-form-field appearance="fill" [formControl]="priceControl" ngDefaultControl>
+                <mat-label>Price</mat-label>
+                <input matInput placeholder="Price" required name="price">
+            </mat-form-field>
+            <mat-form-field appearance="fill" [formControl]="imageurlControl" ngDefaultControl>
+                <mat-label>Image URL</mat-label>
+                <input matInput placeholder="image URL" required name="image-url">
+            </mat-form-field>
+
+
+        </form>
+    </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial (click)="createNewService()">Create</button>
+</mat-dialog-actions>
