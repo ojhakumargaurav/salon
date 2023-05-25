@@ -1,5 +1,10 @@
-from .models import Service, Appointment
-from .serializers import ServiceSerializer, AppointmentSerializer
+from .models import Service, Appointment, SubscriptionDetails, BusinessUser
+from .serializers import (
+    ServiceSerializer,
+    AppointmentSerializer,
+    SubscriptionDetailsSerializer,
+    BusinessUserSerializer,
+)
 from rest_framework import permissions
 from rest_framework import viewsets
 
@@ -33,4 +38,26 @@ class AppointmentViewset(viewsets.ModelViewSet):
 
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class SubsriptionViewsets(viewsets.ModelViewSet):
+    """
+    this is subscription based model where business have to create a subscription
+    which will enable them to offer discounts on there product to retain customers
+
+    """
+
+    queryset = SubscriptionDetails.objects.all()
+    serializer_class = SubscriptionDetailsSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+
+class BusinessUserViewsets(viewsets.ModelViewSet):
+    """
+    this viewset will list and retrieve user who will have subscription details too
+    """
+
+    queryset = BusinessUser.objects.all()
+    serializer_class = BusinessUserSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

@@ -10,17 +10,17 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class HeaderComponent {
   private breakpointObserver = inject(BreakpointObserver);
-  @Input() title:string=""
-  ngOnInit(){
-    
-    
+  @Input() title: string = ""
+  ngOnInit() {
+
+
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe([Breakpoints.Handset, Breakpoints.Web])
     .pipe(
-      map(result =>{ 
-        console.log(result)
-        return result.matches}),
+      map(result => {
+        return result.matches
+      }),
       shareReplay()
     );
 }

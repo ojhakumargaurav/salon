@@ -3,6 +3,7 @@ import { SalonServiceService } from '../salon-service.service';
 import { Services } from '../models/models';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateServiceComponent } from '../create-service/create-service.component';
+import { ServiceCardComponent } from '../service-card/service-card.component';
 
 @Component({
   selector: 'app-service-component',

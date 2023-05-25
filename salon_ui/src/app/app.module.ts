@@ -18,6 +18,7 @@ import { MatListModule } from '@angular/material/list';
 import { CreateServiceComponent } from './create-service/create-service.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { ServiceCardComponent } from './service-card/service-card.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
     ServiceComponentComponent,
     HeaderComponent,
     CreateServiceComponent,
+    ServiceCardComponent,
 
   ],
   imports: [

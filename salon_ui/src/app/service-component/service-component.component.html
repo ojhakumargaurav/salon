@@ -1,9 +1,9 @@
+<div class="service-container">
+
+    <app-service-card *ngFor="let service of servicesAvailable" [service]="service">
+    </app-service-card>
+
+</div>
 
 
-<mat-card *ngFor="let service of servicesAvailable">
-    <mat-card-header>{{service.name}}</mat-card-header>
-    <img mat-card-image src="{{service.image_url}}" alt="service image">
-    <mat-card-content>{{service.description}}</mat-card-content>
-</mat-card>
 <button mat-button (click)="openDialog()">Create a new service</button>
-
